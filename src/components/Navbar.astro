@@ -7,12 +7,6 @@ const menuItems = [
   { label: "View", href: "#" },
   { label: "Special", href: "#" },
 ];
-
-const currentTime = new Date().toLocaleTimeString("en-US", {
-  hour: "2-digit",
-  minute: "2-digit",
-  hour12: true,
-});
 ---
 
 <nav class="mac-menubar">
@@ -28,7 +22,7 @@ const currentTime = new Date().toLocaleTimeString("en-US", {
       }
     </div>
     <div class="mac-menubar-right">
-      <span class="mac-clock">{currentTime}</span>
+      <span class="mac-clock"></span>
     </div>
   </div>
 </nav>
@@ -89,3 +83,14 @@ const currentTime = new Date().toLocaleTimeString("en-US", {
     font-weight: 400;
   }
 </style>
+
+<script>
+  const currentTime: string = new Date().toLocaleTimeString("en-US", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: true,
+  });
+
+  const horaNav = document.querySelector(".mac-clock") as HTMLElement;
+  horaNav.innerText = `${currentTime}`;
+</script>
