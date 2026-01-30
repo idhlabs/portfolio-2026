@@ -1,4 +1,63 @@
 @import "tailwindcss";
+
+/* Variables de tema retro Mac OS */
+:root {
+  --mac-bg: #c0c0c0;
+  --mac-dark: #808080;
+  --mac-light: #ffffff;
+  --mac-shadow: #000000;
+  --mac-blue: #0000aa;
+  --mac-window-bg: #ffffff;
+  --mac-border: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Pixelify Sans", sans-serif;
+  background: var(--mac-bg);
+  color: var(--mac-border);
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Efectos 3D para elementos retro */
+.retro-border {
+  border: 2px solid var(--mac-border);
+  box-shadow:
+    inset 1px 1px 0 var(--mac-light),
+    inset -1px -1px 0 var(--mac-dark);
+}
+
+.retro-border-inset {
+  border: 2px solid var(--mac-border);
+  box-shadow:
+    inset -1px -1px 0 var(--mac-light),
+    inset 1px 1px 0 var(--mac-dark);
+}
+
+.retro-button {
+  border: 2px solid var(--mac-border);
+  background: var(--mac-bg);
+  box-shadow:
+    inset 1px 1px 0 var(--mac-light),
+    inset -1px -1px 0 var(--mac-dark);
+  padding: 4px 12px;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.retro-button:hover {
+  background: var(--mac-light);
+}
+
+.retro-button:active {
+  box-shadow:
+    inset -1px -1px 0 var(--mac-light),
+    inset 1px 1px 0 var(--mac-dark);
 }

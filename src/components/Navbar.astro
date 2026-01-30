@@ -1,12 +1,91 @@
 ---
+// Navbar estilo Mac OS clásico
+const menuItems = [
+  { icon: "🍎", label: "Apple", href: "#" },
+  { label: "File", href: "#" },
+  { label: "Edit", href: "#" },
+  { label: "View", href: "#" },
+  { label: "Special", href: "#" },
+];
 
+const currentTime = new Date().toLocaleTimeString("en-US", {
+  hour: "2-digit",
+  minute: "2-digit",
+  hour12: true,
+});
 ---
 
-<div class="my-2 border-x-black">
-  <nav>
-    <a href="">Home</a>  
-    <a href="">Email</a>         
-    <a href="">Files</a>   
-    </ul>
-  </nav>
-</div>
+<nav class="mac-menubar">
+  <div class="mac-menubar-content">
+    <div class="mac-menubar-left">
+      {
+        menuItems.map((item) => (
+          <a href={item.href} class="mac-menu-item">
+            {item.icon && <span class="mac-menu-icon">{item.icon}</span>}
+            {item.label}
+          </a>
+        ))
+      }
+    </div>
+    <div class="mac-menubar-right">
+      <span class="mac-clock">{currentTime}</span>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .mac-menubar {
+    background: white;
+    border-bottom: 2px solid black;
+    box-shadow: 0 2px 0 #808080;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .mac-menubar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8px;
+    height: 28px;
+  }
+
+  .mac-menubar-left {
+    display: flex;
+    gap: 16px;
+  }
+
+  .mac-menu-item {
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.1s;
+    font-weight: 400;
+  }
+
+  .mac-menu-item:hover {
+    background: black;
+    color: white;
+  }
+
+  .mac-menu-icon {
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  .mac-menubar-right {
+    display: flex;
+    align-items: center;
+  }
+
+  .mac-clock {
+    font-size: 14px;
+    color: black;
+    font-weight: 400;
+  }
+</style>
