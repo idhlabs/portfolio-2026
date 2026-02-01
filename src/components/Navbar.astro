@@ -29,12 +29,8 @@ const menuItems = [
 
 <style>
   .mac-menubar {
-    background: white;
+    background: rgb(232, 232, 232);
     border-bottom: 2px solid black;
-    box-shadow: 0 2px 0 #808080;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
   }
 
   .mac-menubar-content {
@@ -85,12 +81,20 @@ const menuItems = [
 </style>
 
 <script>
-  const currentTime: string = new Date().toLocaleTimeString("en-US", {
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: true,
-  });
+  function updateClock() {
+    const currentTime: string = new Date().toLocaleTimeString("en-US", {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
+    });
 
-  const horaNav = document.querySelector(".mac-clock") as HTMLElement;
-  horaNav.innerText = `${currentTime}`;
+    const horaNav = document.querySelector(".mac-clock") as HTMLElement;
+    if (horaNav) {
+      horaNav.innerText = currentTime;
+    }
+  }
+
+  updateClock();
+
+  setInterval(updateClock, 6000);
 </script>

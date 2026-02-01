@@ -2,6 +2,7 @@
 import "@fontsource/pixelify-sans";
 import "../styles/global.css";
 import Navbar from "../components/Navbar.astro";
+import IconsDesktop from "../components/IconsDesktop.astro";
 ---
 
 <!doctype html>
@@ -15,41 +16,13 @@ import Navbar from "../components/Navbar.astro";
   </head>
   <body>
     <Navbar />
-
-    <main class="desktop">
-      <div class="desktop-pattern">
-        <h1 class="welcome-text">Bienvenido a mi Portfolio Retro</h1>
-      </div>
-    </main>
+    <IconsDesktop />
   </body>
 </html>
 
 <style>
-  .desktop {
+  body {
     min-height: calc(100vh - 32px);
-    padding: 20px;
     background: #008080;
-    position: relative;
-  }
-
-  .desktop-pattern {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .welcome-text {
-    background: white;
-    border: 2px solid black;
-    box-shadow:
-      inset 1px 1px 0 #ffffff,
-      inset -1px -1px 0 #808080,
-      4px 4px 0 rgba(0, 0, 0, 0.3);
-    padding: 24px 32px;
-    font-size: 24px;
-    text-align: center;
-    color: black;
   }
 </style>
