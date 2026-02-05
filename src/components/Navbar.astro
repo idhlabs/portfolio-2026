@@ -1,7 +1,9 @@
 ---
+import iconFlame from "../../public/assets/icon_flama.jpg";
+
 // Navbar estilo Mac OS clásico
 const menuItems = [
-  { icon: "🍎", label: "Apple", href: "#" },
+  { icon: iconFlame },
   { label: "File", href: "#" },
   { label: "Edit", href: "#" },
   { label: "View", href: "#" },
@@ -12,10 +14,10 @@ const menuItems = [
 <nav class="mac-menubar">
   <div class="mac-menubar-content">
     <div class="mac-menubar-left">
+      <img src={iconFlame.src} class="max-h-7" />
       {
         menuItems.map((item) => (
           <a href={item.href} class="mac-menu-item">
-            {item.icon && <span class="mac-menu-icon">{item.icon}</span>}
             {item.label}
           </a>
         ))
@@ -43,7 +45,6 @@ const menuItems = [
 
   .mac-menubar-left {
     display: flex;
-    gap: 16px;
   }
 
   .mac-menu-item {
