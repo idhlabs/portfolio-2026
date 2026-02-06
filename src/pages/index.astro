@@ -3,6 +3,7 @@ import "@fontsource/pixelify-sans";
 import "../styles/global.css";
 import Navbar from "../components/Navbar.astro";
 import IconsDesktop from "../components/IconsDesktop.astro";
+import { ClientRouter } from "astro:transitions";
 ---
 
 <!doctype html>
@@ -13,6 +14,7 @@ import IconsDesktop from "../components/IconsDesktop.astro";
     <meta name="generator" content={Astro.generator} />
     <title>Sistema 7.5 - Portfolio</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <ClientRouter />
   </head>
   <body>
     <Navbar />

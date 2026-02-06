@@ -11,6 +11,22 @@
   --mac-border: #000000;
 }
 
+* {
+  cursor: url("/assets/cursorIcon.png"), auto;
+}
+
+button,
+a,
+[data-open],
+[data-close] {
+  cursor: url("/assets/cursorPointer.png"), pointer;
+}
+
+button > *,
+[data-open] > * {
+  pointer-events: none;
+}
+
 body {
   font-family: "Pixelify Sans", sans-serif;
   background: var(--mac-bg);

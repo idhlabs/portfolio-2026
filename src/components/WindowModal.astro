@@ -1,0 +1,58 @@
+---
+// src/components/WindowModal.astro
+interface Props {
+  id: string;
+  title: string;
+}
+const { id, title } = Astro.props;
+---
+
+<div
+  id={id}
+  class="hidden fixed inset-0 z-[1000] items-center justify-center bg-black/30"
+>
+  <div
+    class="bg-white border-2 border-black shadow-[4px_4px_0_rgba(0,0,0,0.3)] w-[800px] h-[600px] animate-[windowOpen_0.2s_ease-out]"
+  >
+    <div
+      class="bg-linear-to-b from-white to-gray-300 border-b-2 border-black px-2 py-1 flex justify-between items-center"
+    >
+      <span class="font-bold text-sm">{title}</span>
+      <button
+        class="bg-white border-2 border-black w-5 h-5 text-base leading-none hover:bg-black hover:text-white cursor-pointer"
+        data-close={id}
+      >
+        ×
+      </button>
+    </div>
+    <div class="p-4">
+      <slot />
+    </div>
+  </div>
+</div>
+
+<style>
+  @keyframes windowOpen {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    document.querySelectorAll("[data-close]").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        const target = (e.target as HTMLElement).dataset.close;
+        const modal = document.getElementById(target!);
+        modal?.classList.add("hidden");
+        modal?.classList.remove("flex");
+      });
+    });
+  });
+</script>
