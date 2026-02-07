@@ -39,10 +39,95 @@ import WindowModal from "./WindowModal.astro";
 </section>
 
 <WindowModal id="about-window" title="Sobre Mí">
-  <p class="text-center">TE AMO BUBU</p>
+  <div class="flex gap-8 items-start mt-10">
+    <!-- Foto con efecto de moneda girando y nombre -->
+    <div class="flex flex-col items-center">
+      <div class="coin-container">
+        <div class="coin">
+          <div class="coin-face coin-front">
+            <img
+              src="/assets/perfil1.png"
+              alt="Perfil 8bit"
+              class="w-full h-full object-cover rounded-full"
+            />
+          </div>
+          <div class="coin-face coin-back">
+            <img
+              src="/assets/perfil2.png"
+              alt="Perfil real"
+              class="w-full h-full object-cover rounded-full"
+            />
+          </div>
+        </div>
+      </div>
+      <p class="text-center mt-3 text-xl">Iván Duarte Herrera</p>
+    </div>
 
-  <img src="../../public/assets/bubududu.png" alt="" class="mx-auto block" />
+    <!-- Texto descriptivo -->
+    <div class="flex-1">
+      <p class="mb-3 leading-relaxed text-2xl">Ingeniero en Informática</p>
+      <p class="mb-3 leading-relaxed text-xl">
+        DevOps y Desarrollo de software.
+      </p>
+      <p class="mb-3 leading-relaxed text-base">
+        Ingeniero en Informática con orientación al desarrollo de software,
+        plataformas cloud y prácticas DevOps, con experiencia en desarrollo
+        full-stack, despliegue de aplicaciones en entornos cloud, automatización
+        CI/CD, contenedores Docker y trabajo con arquitecturas monolíticas y de
+        microservicios
+      </p>
+    </div>
+  </div>
 </WindowModal>
+
+<style>
+  .coin-container {
+    perspective: 1000px;
+    width: 180px;
+    height: 180px;
+    flex-shrink: 0;
+  }
+
+  .coin {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: coinFlip 8s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  }
+
+  .coin-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 50%;
+    border: 3px solid #000;
+    overflow: hidden;
+  }
+
+  .coin-front {
+    transform: rotateY(0deg);
+  }
+
+  .coin-back {
+    transform: rotateY(180deg);
+  }
+
+  @keyframes coinFlip {
+    0%,
+    70% {
+      transform: rotateY(0deg);
+    }
+    85%,
+    88% {
+      transform: rotateY(180deg);
+    }
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+</style>
 
 <WindowModal id="projects-window" title="Mis Proyectos">
   <p>Lista de proyectos...</p>
@@ -60,5 +145,10 @@ import WindowModal from "./WindowModal.astro";
         modal?.classList.add("flex");
       });
     });
+
+    // Abrir ventana "Sobre Mí" por defecto al entrar
+    const aboutModal = document.getElementById("about-window");
+    aboutModal?.classList.remove("hidden");
+    aboutModal?.classList.add("flex");
   });
 </script>
