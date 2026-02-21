@@ -1,0 +1,14 @@
+@keyframes windowOpen {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-windowOpen {
+  animation: windowOpen 0.2s ease-out;
+}

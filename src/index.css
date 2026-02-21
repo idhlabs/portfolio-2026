@@ -23,17 +23,20 @@ a,
 }
 
 button > *,
+a > *,
 [data-open] > * {
   pointer-events: none;
 }
 
 body {
+  margin: 0;
   font-family: "Pixelify Sans", sans-serif;
-  background: var(--mac-bg);
+  background: #008080;
   color: var(--mac-border);
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;
+  min-height: 100vh;
 }
 
 /* Efectos 3D para elementos retro */
