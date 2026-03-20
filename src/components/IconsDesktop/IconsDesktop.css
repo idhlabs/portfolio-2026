@@ -5,6 +5,28 @@
   flex-shrink: 0;
 }
 
+@media (max-width: 768px) {
+  .about-coin-container {
+    width: 132px;
+    height: 132px;
+  }
+}
+
+.desktop-icon-label {
+  background: #fffbeb;
+  color: #111;
+  padding: 4px 6px;
+  transition:
+    background-color 0.12s ease,
+    color 0.12s ease;
+}
+
+.desktop-icon:hover .desktop-icon-label,
+.desktop-icon:focus-within .desktop-icon-label {
+  background: #111;
+  color: #fff;
+}
+
 .coin {
   width: 100%;
   height: 100%;

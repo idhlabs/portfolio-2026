@@ -30,18 +30,24 @@ const WindowModal: React.FC<WindowModalProps> = ({
       className="fixed inset-0 z-1000 flex items-center justify-center bg-black/30"
     >
       <div
-        className={`bg-white border-2 border-black shadow-[4px_4px_0_rgba(0,0,0,0.3)] ${width} ${height} animate-windowOpen`}
+        className={`window-modal-shell ${width} ${height} animate-windowOpen flex flex-col`}
       >
-        <div className="bg-linear-to-b from-white to-gray-300 border-b-2 border-black px-2 py-1 flex justify-between items-center">
-          <span className="font-bold text-sm">{title}</span>
-          <button
-            className="bg-white border-2 border-black w-5 h-5 text-base leading-none hover:bg-black hover:text-white cursor-pointer"
-            onClick={() => onClose(id)}
-          >
+        <div className="window-modal-titlebar">
+          <span className="window-modal-title-icon" aria-hidden="true" />
+          <span className="window-modal-title">{title}</span>
+          <button className="window-modal-close" onClick={() => onClose(id)}>
             ×
           </button>
         </div>
-        <div className={noPadding ? "" : "p-4"}>{children}</div>
+        <div
+          className={
+            noPadding
+              ? "window-modal-content flex-1 min-h-0"
+              : "window-modal-content p-4 flex-1 min-h-0"
+          }
+        >
+          {children}
+        </div>
       </div>
     </div>
   );

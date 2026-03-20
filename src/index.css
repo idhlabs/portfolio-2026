@@ -12,14 +12,18 @@
 }
 
 * {
-  cursor: url("/assets/cursorIcon.png"), auto;
+  cursor:
+    url("/assets/cursorIconSmall.png") 3 1,
+    auto;
 }
 
 button,
 a,
 [data-open],
 [data-close] {
-  cursor: url("/assets/cursorPointer.png"), pointer;
+  cursor:
+    url("/assets/cursorPointerSmall.png") 4 0,
+    pointer;
 }
 
 button > *,
@@ -30,8 +34,10 @@ a > *,
 
 body {
   margin: 0;
-  font-family: "Pixelify Sans", sans-serif;
-  background: #008080;
+  font-family: "Jersey 10", sans-serif;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  background: #2b2b2b;
   color: var(--mac-border);
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;

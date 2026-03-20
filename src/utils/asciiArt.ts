@@ -34,23 +34,20 @@ export const USER_INFO = [
   { label: "Shell", value: "ivsh" },
   { label: "", value: "" },
   { label: "Nombre", value: "Iván Duarte Herrera" },
-  { label: "Rol", value: "Full Stack Developer & DevOps" },
+  { label: "Rol", value: "Ingeniero en Informática" },
   { label: "Especialidad", value: "Web - DevOps - Cloud" },
-  { label: "", value: "" },
-  { label: "Skills Frontend", value: "React, TypeScript, Tailwind" },
-  { label: "Skills Backend", value: "Node.js, Python, Docker" },
   { label: "", value: "" },
 
   { label: "", value: "" },
   { label: "Comandos", value: "help, ls, cd, cat, pwd, clear" },
 ];
 
-/**
- * Genera el splash screen inicial tipo fastfetch/neofetch
- */
-export const generateSplashScreen = (): string => {
-  const asciiLines = ASCII_ART.trim().split("\n");
-  const infoLines = USER_INFO.map((item) => {
+const buildSplashScreen = (
+  asciiText: string,
+  userInfo: Array<{ label: string; value: string }>,
+) => {
+  const asciiLines = asciiText.trim().split("\n");
+  const infoLines = userInfo.map((item) => {
     if (!item.label) return "";
     return `${item.label}: ${item.value}`;
   });
@@ -75,4 +72,18 @@ export const generateSplashScreen = (): string => {
   }
 
   return combinedLines.join("\n");
+};
+
+/**
+ * Genera el splash screen inicial tipo fastfetch/neofetch
+ */
+export const generateSplashScreen = (): string => {
+  return buildSplashScreen(ASCII_ART, USER_INFO);
+};
+
+export const generateSplashInfoOnly = (): string => {
+  return USER_INFO.map((item) => {
+    if (!item.label) return "";
+    return `${item.label}: ${item.value}`;
+  }).join("\n");
 };

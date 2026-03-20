@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className="mac-menubar">
       <div className="mac-menubar-content">
-        <div className="mac-menubar-left">
+        <div className="mac-menubar-left ">
           <img src="/assets/icon_flama.jpg" className="max-h-7" alt="Icon" />
           {menuItems.map((item) => (
             <a key={item.label} href={item.href} className="mac-menu-item">

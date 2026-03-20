@@ -2,6 +2,7 @@ import { useRef, useEffect, useState } from "react";
 import { useTerminal } from "../../features/terminal/hooks/useTerminal";
 import type { CommandOutput } from "../../types/terminal";
 import TypewriterText from "./TypewriterText";
+import { generateSplashInfoOnly } from "../../utils/asciiArt";
 import "./Terminal.css";
 
 /**
@@ -30,6 +31,11 @@ const Terminal = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [typewriterComplete, setTypewriterComplete] = useState(false);
   const [showInput, setShowInput] = useState(false);
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined"
+      ? window.matchMedia("(max-width: 768px)").matches
+      : false,
+  );
 
   /**
    * Maneja el envío de comandos (Enter)
@@ -79,6 +85,27 @@ const Terminal = () => {
     }
   }, [typewriterComplete]);
 
+  useEffect(() => {
+    if (isMobile) {
+      setTypewriterComplete(true);
+    }
+  }, [isMobile]);
+
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 768px)");
+
+    const handleMediaChange = (event: MediaQueryListEvent) => {
+      setIsMobile(event.matches);
+    };
+
+    setIsMobile(media.matches);
+    media.addEventListener("change", handleMediaChange);
+
+    return () => {
+      media.removeEventListener("change", handleMediaChange);
+    };
+  }, []);
+
   /**
    * Callback cuando termina la animación typewriter
    */
@@ -107,25 +134,33 @@ const Terminal = () => {
       <div className="terminal-body">
         {/* Historial de output */}
         <div className="terminal-output">
-          {terminalState.output.map((line: CommandOutput, index: number) => (
-            <div
-              key={index}
-              className={`terminal-line ${getOutputClass(line.type)}`}
-            >
-              <pre className="terminal-text">
-                {/* Usar efecto typewriter solo para el primer output (splash screen) */}
-                {index === 0 && !typewriterComplete ? (
-                  <TypewriterText
-                    text={line.content}
-                    speed={0.5}
-                    onComplete={handleTypewriterComplete}
-                  />
-                ) : (
-                  line.content
-                )}
-              </pre>
-            </div>
-          ))}
+          {terminalState.output.map((line: CommandOutput, index: number) => {
+            const isSplashLine = index === 0;
+            const currentLine =
+              isMobile && isSplashLine
+                ? generateSplashInfoOnly()
+                : line.content;
+
+            return (
+              <div
+                key={index}
+                className={`terminal-line ${getOutputClass(line.type)}`}
+              >
+                <pre className="terminal-text">
+                  {/* Usar efecto typewriter solo para el primer output (splash screen) en desktop */}
+                  {isSplashLine && !typewriterComplete && !isMobile ? (
+                    <TypewriterText
+                      text={currentLine}
+                      speed={0.5}
+                      onComplete={handleTypewriterComplete}
+                    />
+                  ) : (
+                    currentLine
+                  )}
+                </pre>
+              </div>
+            );
+          })}
         </div>
 
         {/* Input actual - solo se muestra después de la animación inicial */}

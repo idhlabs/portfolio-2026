@@ -25,9 +25,9 @@ Actualmente estoy trabajando en mi proyecto más grande que es crear una infraes
         "contacto.txt": {
           type: "file",
           name: "contacto.txt",
-          content: `📧 Email: ivan@ejemplo.com
+          content: `📧 Email: ivanduarteherrera@gmail.com
 🔗 LinkedIn: /in/ivanduarte
-💻 GitHub: github.com/ivanduarte
+💻 GitHub: github.com/reaien
 🌐 Portfolio: ivanduarte.dev`,
         },
         proyectos: {

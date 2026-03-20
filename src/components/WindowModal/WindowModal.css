@@ -12,3 +12,67 @@
 .animate-windowOpen {
   animation: windowOpen 0.2s ease-out;
 }
+
+.window-modal-shell {
+  background: #ffffff;
+  border: 2px solid #000;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+.window-modal-titlebar {
+  display: grid;
+  grid-template-columns: 18px 1fr 20px;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  border-bottom: 2px solid #000;
+  background: repeating-linear-gradient(
+    0deg,
+    #ffffff,
+    #ffffff 2px,
+    #ededed 2px,
+    #ededed 3px
+  );
+}
+
+.window-modal-title-icon {
+  width: 14px;
+  height: 14px;
+  border: 1px solid #000;
+  background:
+    linear-gradient(90deg, #000 0 2px, transparent 2px),
+    linear-gradient(0deg, #000 0 2px, transparent 2px), #fff;
+}
+
+.window-modal-title {
+  font-size: 1.35rem;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.window-modal-close {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #000;
+  background: #fff;
+  line-height: 1;
+  font-size: 0.95rem;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor:
+    url("/assets/cursorPointerSmall.png") 4 0,
+    pointer;
+}
+
+.window-modal-close:hover {
+  background: #111;
+  color: #fff;
+}
+
+.window-modal-content {
+  background: #fff;
+}

@@ -1,0 +1,261 @@
+.dh-mail-app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #d7d7d7 0%, #bababa 100%);
+  color: #101010;
+  font-family: "Jersey 10", monospace;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+}
+
+.dh-mail-toolbar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 14px;
+  border-bottom: 2px solid #000;
+  background: linear-gradient(180deg, #f4f4f4 0%, #c9c9c9 100%);
+}
+
+.dh-mail-lights {
+  display: flex;
+  gap: 6px;
+}
+
+.dh-mail-light {
+  width: 12px;
+  height: 12px;
+  border: 1px solid #000;
+  border-radius: 999px;
+}
+
+.dh-mail-light-red {
+  background: #ff6b5e;
+}
+.dh-mail-light-yellow {
+  background: #f7c948;
+}
+.dh-mail-light-green {
+  background: #4fb477;
+}
+
+.dh-mail-menu {
+  display: flex;
+  gap: 18px;
+  font-size: 0.95rem;
+}
+
+.dh-mail-version {
+  padding: 3px 8px;
+  border: 1px solid #000;
+  background: #e8e8e8;
+  font-size: 0.9rem;
+}
+
+.dh-mail-shell {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.dh-mail-sidebar {
+  border-right: 2px solid #000;
+  background: linear-gradient(180deg, #bdbdbd 0%, #adadad 100%);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dh-mail-panel {
+  border: 2px solid #000;
+  background: #e8e5d8;
+  padding: 12px;
+  box-shadow:
+    inset 1px 1px 0 #fff,
+    inset -1px -1px 0 #7d7d7d;
+}
+
+.dh-mail-panel-title {
+  margin: 0 0 10px;
+  font-size: 1.35rem;
+  text-transform: uppercase;
+}
+
+.dh-mail-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dh-mail-list li,
+.dh-mail-monitor p {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+
+.dh-mail-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.5),
+      rgba(204, 204, 204, 0.45)
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.04),
+      rgba(0, 0, 0, 0.04) 1px,
+      transparent 1px,
+      transparent 24px
+    );
+}
+
+.dh-mail-content {
+  flex: 1;
+  min-height: 0;
+  padding: 18px;
+  display: grid;
+  grid-template-columns: minmax(180px, 240px) 1fr;
+  gap: 18px;
+  overflow: auto;
+  align-content: start;
+}
+
+.dh-mail-intro,
+.dh-mail-form {
+  border: 2px solid #000;
+  background: #ece5d4;
+  box-shadow:
+    inset 1px 1px 0 #fff,
+    inset -1px -1px 0 #878787;
+}
+
+.dh-mail-intro {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.dh-mail-title,
+.dh-mail-subtitle,
+.dh-mail-hint {
+  margin: 0;
+}
+
+.dh-mail-title {
+  font-size: 2.5rem;
+  line-height: 1.1;
+}
+
+.dh-mail-subtitle {
+  font-size: 1.45rem;
+  line-height: 1.4;
+}
+
+.dh-mail-hint {
+  font-size: 1.25rem;
+  line-height: 1.7;
+}
+
+.dh-mail-form {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.dh-mail-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dh-mail-field span {
+  font-size: 1.2rem;
+  letter-spacing: 0.025em;
+}
+
+.dh-mail-field input,
+.dh-mail-field textarea {
+  width: 100%;
+  border: 2px solid #000;
+  background: #fcfbf2;
+  color: #101010;
+  padding: 10px 12px;
+  font: inherit;
+  font-size: 1.15rem;
+  letter-spacing: 0.015em;
+  line-height: 1.35;
+  outline: none;
+  box-sizing: border-box;
+  box-shadow:
+    inset 1px 1px 0 #8f8f8f,
+    inset -1px -1px 0 #fff;
+}
+
+.dh-mail-field input:focus,
+.dh-mail-field textarea:focus {
+  background: #fffef8;
+}
+
+.dh-mail-field-message textarea {
+  min-height: 220px;
+  resize: vertical;
+}
+
+.dh-mail-captcha-wrap {
+  overflow-x: auto;
+  padding-top: 4px;
+}
+
+.dh-mail-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.dh-mail-button {
+  border: 2px solid #000;
+  background: linear-gradient(180deg, #fbf6d2 0%, #d7b54a 100%);
+  padding: 10px 16px;
+  font: inherit;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow:
+    inset 1px 1px 0 #fff,
+    inset -1px -1px 0 #7f5d10;
+}
+
+.dh-mail-button:hover:enabled {
+  filter: brightness(1.03);
+}
+
+.dh-mail-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.dh-mail-button-secondary {
+  background: linear-gradient(180deg, #f2f2f2 0%, #bfbfbf 100%);
+  box-shadow:
+    inset 1px 1px 0 #fff,
+    inset -1px -1px 0 #6f6f6f;
+}
+
+@media (max-width: 980px) {
+  .dh-mail-content {
+    grid-template-columns: 1fr;
+  }
+}
