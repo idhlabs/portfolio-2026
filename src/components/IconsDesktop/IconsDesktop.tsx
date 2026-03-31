@@ -4,6 +4,7 @@ import WindowModal from "../WindowModal/WindowModal";
 import Terminal from "../Terminal";
 import ContactMe from "../ContactMe/ContactMe";
 import Certifications from "../Certifications/Certifications";
+import MyProjects from "../MyProjects/MyProjects";
 import "./IconsDesktop.css";
 
 type WindowId =
@@ -48,10 +49,13 @@ const IconsDesktop: React.FC = () => {
           <img className="w-12" src="/assets/certsIcon.svg" alt="meIcon" />
           <p className="desktop-icon-label">Certificaciones</p>
         </button>
-        <div className="desktop-icon w-25 flex flex-col items-center">
+        <button
+          className="desktop-icon w-25 flex flex-col items-center cursor-pointer"
+          onClick={() => openWindow("projects-window")}
+        >
           <img className="w-12" src="/assets/projectsIcon.svg" alt="meIcon" />
           <p className="desktop-icon-label">Mis Proyectos</p>
-        </div>
+        </button>
         <button
           className="desktop-icon max-w-25 flex flex-col items-center cursor-pointer"
           onClick={() => openWindow("terminal-window")}
@@ -104,7 +108,7 @@ const IconsDesktop: React.FC = () => {
         isOpen={openWindows["projects-window"]}
         onClose={closeWindow}
       >
-        <p>Lista de proyectos...</p>
+        <MyProjects />
       </WindowModal>
 
       <WindowModal
