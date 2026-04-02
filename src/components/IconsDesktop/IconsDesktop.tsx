@@ -54,7 +54,7 @@ const IconsDesktop: React.FC = () => {
           onClick={() => openWindow("projects-window")}
         >
           <img className="w-12" src="/assets/projectsIcon.svg" alt="meIcon" />
-          <p className="desktop-icon-label">Mis Proyectos</p>
+          <p className="desktop-icon-label">Mis Proyectos testing</p>
         </button>
         <button
           className="desktop-icon max-w-25 flex flex-col items-center cursor-pointer"
