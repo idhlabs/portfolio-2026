@@ -31,7 +31,7 @@ const WindowModal: React.FC<WindowModalProps> = ({
       <div
         id={id}
         className="absolute right-2 top-24 z-50 flex flex-col window-modal-shell"
-        style={{ width: "420px", maxHeight: "calc(100vh - 180px)" }}
+        style={{ width: "480px", maxHeight: "calc(100vh - 180px)" }}
       >
         <div className="window-modal-titlebar">
           <span className="window-modal-title-icon" aria-hidden="true" />
