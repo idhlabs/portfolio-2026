@@ -31,13 +31,6 @@ const IconsDesktop: React.FC = () => {
   return (
     <>
       <section className="mt-5 flex flex-col flex-wrap max-h-[90vh] gap-4 max-w-6 pl-6 text-center text-xl">
-        <button
-          className="desktop-icon max-w-25 flex flex-col items-center cursor-pointer"
-          onClick={() => openWindow("about-window")}
-        >
-          <img className="w-12" src="/assets/aboutMeIcon.svg" alt="meIcon" />
-          <p className="desktop-icon-label">Sobre Mí</p>
-        </button>
         <div className="desktop-icon w-25 flex flex-col items-center">
           <img className="w-12" src="/assets/folderIcon.svg" alt="meIcon" />
           <p className="desktop-icon-label">Mis Cosas</p>
@@ -96,8 +89,7 @@ const IconsDesktop: React.FC = () => {
         title="Sobre Mí"
         isOpen={openWindows["about-window"]}
         onClose={closeWindow}
-        width="w-[94vw] max-w-[920px]"
-        height="h-[86vh] max-h-[760px] md:h-auto md:max-h-[620px]"
+        docked={true}
       >
         <AboutMeContent />
       </WindowModal>

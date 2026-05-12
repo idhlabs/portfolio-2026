@@ -19,6 +19,13 @@
   box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
 }
 
+.window-modal-shell.docked {
+  border-left: none;
+  border-top: none;
+  border-bottom: none;
+  box-shadow: -4px 0 0 rgba(0, 0, 0, 0.3);
+}
+
 .window-modal-titlebar {
   display: grid;
   grid-template-columns: 18px 1fr 20px;

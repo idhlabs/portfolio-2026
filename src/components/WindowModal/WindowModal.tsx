@@ -10,6 +10,7 @@ interface WindowModalProps {
   width?: string;
   height?: string;
   noPadding?: boolean;
+  docked?: boolean;
 }
 
 const WindowModal: React.FC<WindowModalProps> = ({
@@ -21,8 +22,36 @@ const WindowModal: React.FC<WindowModalProps> = ({
   width = "w-187.5",
   height = "min-h-100",
   noPadding = false,
+  docked = false,
 }) => {
   if (!isOpen) return null;
+
+  if (docked) {
+    return (
+      <div
+        id={id}
+        className="fixed right-0 top-14 h-full z-50 flex flex-col window-modal-shell"
+        style={{ width: "clamp(320px, 35vw, 480px)" }}
+      >
+        <div className="window-modal-titlebar">
+          <span className="window-modal-title-icon" aria-hidden="true" />
+          <span className="window-modal-title">{title}</span>
+          <button className="window-modal-close" onClick={() => onClose(id)}>
+            ×
+          </button>
+        </div>
+        <div
+          className={
+            noPadding
+              ? "window-modal-content flex-1 min-h-0"
+              : "window-modal-content p-4 flex-1 min-h-0"
+          }
+        >
+          {children}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div
