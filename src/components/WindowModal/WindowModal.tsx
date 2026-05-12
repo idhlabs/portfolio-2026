@@ -30,8 +30,8 @@ const WindowModal: React.FC<WindowModalProps> = ({
     return (
       <div
         id={id}
-        className="fixed right-0 top-14 h-full z-50 flex flex-col window-modal-shell"
-        style={{ width: "clamp(320px, 35vw, 480px)" }}
+        className="absolute right-2 top-24 z-50 flex flex-col window-modal-shell"
+        style={{ width: "380px", maxHeight: "calc(100vh - 120px)" }}
       >
         <div className="window-modal-titlebar">
           <span className="window-modal-title-icon" aria-hidden="true" />
@@ -43,8 +43,8 @@ const WindowModal: React.FC<WindowModalProps> = ({
         <div
           className={
             noPadding
-              ? "window-modal-content flex-1 min-h-0"
-              : "window-modal-content p-4 flex-1 min-h-0"
+              ? "window-modal-content flex-1 min-h-0 overflow-auto"
+              : "window-modal-content p-4 flex-1 min-h-0 overflow-auto"
           }
         >
           {children}
