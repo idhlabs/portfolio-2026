@@ -30,7 +30,7 @@ const WindowModal: React.FC<WindowModalProps> = ({
     return (
       <div
         id={id}
-        className="absolute right-1 top-24 z-50 flex flex-col window-modal-shell"
+        className="absolute right-[104px] top-24 z-50 flex flex-col window-modal-shell"
         style={{ width: "640px", maxHeight: "calc(100vh - 180px)" }}
       >
         <div className="window-modal-titlebar">
