@@ -8,7 +8,7 @@ services:
       - dhlabs-network
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.portfolio.rule=Host(`portfolio.dhlabs.cl`)"
+      - "traefik.http.routers.portfolio.rule=Host(`dhlabs.cl`) || Host(`portfolio.dhlabs.cl`)"
       - "traefik.http.routers.portfolio.entrypoints=web"
       - "traefik.http.services.portfolio.loadbalancer.server.port=80"
 networks:
