@@ -20,7 +20,6 @@ type OpenWindowsState = Record<string, boolean>;
 const IconsDesktop: React.FC = () => {
   const [openWindows, setOpenWindows] = useState<OpenWindowsState>({
     "about-window": true,
-    "infra-window": true,
   });
 
   const openWindow = (id: WindowId): void => {
@@ -52,13 +51,7 @@ const IconsDesktop: React.FC = () => {
           <img className="w-12" src="/assets/projectsIcon.svg" alt="meIcon" />
           <p className="desktop-icon-label">Mis Proyectos testing</p>
         </button>
-        <button
-          className="desktop-icon w-25 flex flex-col items-center cursor-pointer"
-          onClick={() => openWindow("infra-window")}
-        >
-          <img className="w-12" src="/assets/folderIcon.svg" alt="Infra Homelab" />
-          <p className="desktop-icon-label">Infraestructura Homelab</p>
-        </button>
+        
         <button
           className="desktop-icon max-w-25 flex flex-col items-center cursor-pointer"
           onClick={() => openWindow("terminal-window")}
@@ -110,7 +103,7 @@ const IconsDesktop: React.FC = () => {
         isOpen={openWindows["projects-window"]}
         onClose={closeWindow}
       >
-        <MyProjects />
+        <MyProjects onOpenProject={openWindow} />
       </WindowModal>
 
       <WindowModal

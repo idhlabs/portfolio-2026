@@ -1,0 +1,84 @@
+{
+  "success": true,
+  "issues": [
+    {
+      "type": "dependency",
+      "name": "@fontsource/pixelify-sans",
+      "file": "package.json",
+      "line": 14
+    },
+    {
+      "type": "devDependency",
+      "name": "autoprefixer",
+      "file": "package.json",
+      "line": 26
+    },
+    {
+      "type": "devDependency",
+      "name": "postcss",
+      "file": "package.json",
+      "line": 31
+    },
+    {
+      "type": "export",
+      "name": "ASCII_ART",
+      "file": "src/utils/asciiArt.ts",
+      "line": 2
+    },
+    {
+      "type": "export",
+      "name": "USER_INFO",
+      "file": "src/utils/asciiArt.ts",
+      "line": 30
+    },
+    {
+      "type": "export",
+      "name": "CommandFunction",
+      "file": "src/types/terminal.ts",
+      "line": 12
+    }
+  ],
+  "unusedExports": [
+    {
+      "type": "export",
+      "name": "ASCII_ART",
+      "file": "src/utils/asciiArt.ts",
+      "line": 2
+    },
+    {
+      "type": "export",
+      "name": "USER_INFO",
+      "file": "src/utils/asciiArt.ts",
+      "line": 30
+    },
+    {
+      "type": "export",
+      "name": "CommandFunction",
+      "file": "src/types/terminal.ts",
+      "line": 12
+    }
+  ],
+  "unusedFiles": [],
+  "unusedDeps": [
+    {
+      "type": "dependency",
+      "name": "@fontsource/pixelify-sans",
+      "file": "package.json",
+      "line": 14
+    },
+    {
+      "type": "devDependency",
+      "name": "autoprefixer",
+      "file": "package.json",
+      "line": 26
+    },
+    {
+      "type": "devDependency",
+      "name": "postcss",
+      "file": "package.json",
+      "line": 31
+    }
+  ],
+  "unlistedDeps": [],
+  "summary": "Found 6 issues"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "files": {
+    "src\\components\\MyProjects\\ProjectInfraDHLabs.tsx": {
+      "latest": {
+        "commit": "bb75101",
+        "timestamp": "2026-05-18T03:29:56.605Z",
+        "mi": 53.9,
+        "cognitive": 0,
+        "nesting": 1,
+        "lines": 34,
+        "maxCyclomatic": 1,
+        "entropy": 5.73
+      },
+      "history": [
+        {
+          "commit": "bb75101",
+          "timestamp": "2026-05-18T03:29:56.605Z",
+          "mi": 53.9,
+          "cognitive": 0,
+          "nesting": 1,
+          "lines": 34,
+          "maxCyclomatic": 1,
+          "entropy": 5.73
+        }
+      ],
+      "trend": "stable"
+    }
+  },
+  "capturedAt": "2026-05-18T03:30:01.612Z"
+}
