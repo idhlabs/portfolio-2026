@@ -5,6 +5,7 @@ import Terminal from "../Terminal";
 import ContactMe from "../ContactMe/ContactMe";
 import Certifications from "../Certifications/Certifications";
 import MyProjects from "../MyProjects/MyProjects";
+import ProjectInfraDHLabs from "../MyProjects/ProjectInfraDHLabs";
 import "./IconsDesktop.css";
 
 type WindowId =
@@ -12,12 +13,14 @@ type WindowId =
   | "projects-window"
   | "terminal-window"
   | "mail-window"
-  | "certifications-window";
+  | "certifications-window"
+  | "infra-window";
 type OpenWindowsState = Record<string, boolean>;
 
 const IconsDesktop: React.FC = () => {
   const [openWindows, setOpenWindows] = useState<OpenWindowsState>({
     "about-window": true,
+    "infra-window": true,
   });
 
   const openWindow = (id: WindowId): void => {
@@ -48,6 +51,13 @@ const IconsDesktop: React.FC = () => {
         >
           <img className="w-12" src="/assets/projectsIcon.svg" alt="meIcon" />
           <p className="desktop-icon-label">Mis Proyectos testing</p>
+        </button>
+        <button
+          className="desktop-icon w-25 flex flex-col items-center cursor-pointer"
+          onClick={() => openWindow("infra-window")}
+        >
+          <img className="w-12" src="/assets/folderIcon.svg" alt="Infra Homelab" />
+          <p className="desktop-icon-label">Infraestructura Homelab</p>
         </button>
         <button
           className="desktop-icon max-w-25 flex flex-col items-center cursor-pointer"
@@ -137,6 +147,17 @@ const IconsDesktop: React.FC = () => {
         noPadding={true}
       >
         <Certifications />
+      </WindowModal>
+
+      <WindowModal
+        id="infra-window"
+        title="Infraestructura Homelab"
+        isOpen={openWindows["infra-window"]}
+        onClose={closeWindow}
+        width="w-[1020px]"
+        height="h-[640px]"
+      >
+        <ProjectInfraDHLabs />
       </WindowModal>
     </>
   );
