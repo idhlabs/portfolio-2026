@@ -1,6 +1,8 @@
 import "./ProjectInfraDHLabs.css";
 
 const ProjectInfraDHLabs: React.FC = () => {
+  const gifUrl = "/assets/infra-dhlabs.gif";
+
   return (
     <div className="project-infra-container">
       <div className="project-infra-grid">
@@ -24,10 +26,18 @@ const ProjectInfraDHLabs: React.FC = () => {
         {/* Columna derecha: imagen GIF */}
         <div className="project-infra-image">
           <img
-            src="/assets/infra-dhlabs.gif"
+            src={gifUrl}
             alt="Flujo de infraestructura Homelab DHLabs"
             loading="lazy"
           />
+          <a
+            href={gifUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-infra-zoom-hint"
+          >
+            Click para agrandar
+          </a>
         </div>
       </div>
     </div>

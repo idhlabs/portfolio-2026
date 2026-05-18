@@ -60,13 +60,21 @@
   object-fit: contain;
   object-position: center;
   border: 1px solid #ccc;
-  transform: scale(1.05);
-  transform-origin: center;
-  transition: transform 0.2s ease;
 }
 
-.project-infra-image img:hover {
-  transform: scale(2.5);
+.project-infra-zoom-hint {
+  font-size: 0.75rem;
+  color: #666;
+  text-align: center;
+  padding: 4px 0;
+  text-decoration: none;
+  transition: color 0.12s ease;
+  cursor: pointer;
+}
+
+.project-infra-zoom-hint:hover {
+  color: #111;
+  text-decoration: underline;
 }
 
 /* ─── Responsive: tablet & mobile ─── */
@@ -105,5 +113,9 @@
 
   .project-infra-image img {
     object-fit: cover;
+  }
+
+  .project-infra-zoom-hint {
+    font-size: 0.7rem;
   }
 }
